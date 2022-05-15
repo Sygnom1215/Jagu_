@@ -37,7 +37,7 @@ int main()
 
 void INIT(pstack ps, char c) //초기화
 {
-	ps->topIndex = 0;
+	ps->topIndex = -1;
 	ps->name = c;
 	cout << "Constructing stack" << ps->name << "\n";
 }
@@ -49,8 +49,7 @@ void PUSH(pstack ps, char ch) //삽입
 		cout << "Stack "<<ps->name<<" is full" << endl;
 		return;
 	}
-	ps->stackArr[ps->topIndex] = ch;
-	ps->topIndex++;
+	ps->stackArr[++ps->topIndex] = ch;
 }
 
 char POP(pstack ps) //삭제
@@ -60,6 +59,5 @@ char POP(pstack ps) //삭제
 		cout << "Stack " << ps->name << " is empty" << endl;
 		return 0;
 	}
-	ps->topIndex--;
-	return ps->stackArr[ps->topIndex];
+	return ps->stackArr[ps->topIndex--];
 }
