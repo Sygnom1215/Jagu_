@@ -25,17 +25,17 @@ void BrackTest(string inputStr)
 	{
 		switch (ch)
 		{
-		case '(':
-		case '[':
-		case '{':
+		case('('):
+		case('['):
+		case('{'):
 			_stack.push(ch);
 			break;
-		case')':
+		case(')'):
 			if (_stack.top() == ch - 1)
 				_stack.pop();
 			break;
-		case']':
-		case'}':
+		case(']'):
+		case('}'):
 			if (_stack.top() == ch - 2)
 				_stack.pop();
 			break;
@@ -44,7 +44,7 @@ void BrackTest(string inputStr)
 			break;
 		}
 	}
-	cout << "°ýÈ£ °Ë»ç ";
+	cout << "°ýÈ£ °Ë»ç";
 	if (_stack.size() == 0)
 		cout << "¼º°ø";
 	else
